@@ -2,10 +2,6 @@
 # Copyright (c) 2013 Juniper Networks, Inc. All rights reserved.
 #
 
-# -*- mode: python; -*-
-
-env = DefaultEnvironment().Clone()
-
 sources = [
     'setup.py',
     'requirements.txt',
@@ -47,3 +43,7 @@ if 'install' in BUILD_TARGETS:
     cmd = 'cd ' + Dir('.').path + ' && python setup.py install %s'
     env.Alias('install',
               env.Command(None, sources, cmd % env['PYTHON_INSTALL_OPT']))
+
+# Local Variables:
+# mode: python
+# End:
