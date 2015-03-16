@@ -46,6 +46,8 @@ class BigIP(object):
         self.icr_session.verify = False
         self.icr_session.headers.update(
                                  {'Content-Type': 'application/json'})
+        self.icr_session.headers.update(
+                                 {'Connection':'close'})
         self.icr_url = 'https://%s/mgmt/tm' % hostname
 
         if address_isolation:
